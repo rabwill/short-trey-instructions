@@ -25,10 +25,10 @@ The same "Resources" panel also provides you with the credentials to login to Mi
 
 ## Access Visual Studio Code
 
-Once signed into the machine, you will be able to acces VS Code from the desktop. Open VS Code.
+Once signed into the machine, you will be able to access VS Code from the desktop. Open VS Code.
 
 >[!TIP]
-> When you  open the folder in VS Code, you may see get a prompt window asking if you trust the authors of the files in the folder. This is expected and you can safely select **Yes, I trust the authors**. The dialog is a security safeguard that helps you decide whether to run all features or limit execution based on the trustworthiness of the code authors. If you're opening your own code or from a reliable source, it's safe to trust.
+> When you open the folder in VS Code, you may get a prompt window asking if you trust the authors of the files in the folder. This is expected and you can safely select **Yes, I trust the authors**. The dialog is a security safeguard that helps you decide whether to run all features or limit execution based on the trustworthiness of the code authors. If you're opening your own code or from a reliable source, it's safe to trust.
 
 
 ===
@@ -36,8 +36,7 @@ Once signed into the machine, you will be able to acces VS Code from the desktop
 
 @lab.title 
 
-
-###Learning Objectives: 
+## Learning Objectives 
 
 During this lab, you will construct a customized assistant tailored for a Human Resources department. The process will begin with understanding the fundamentals on creating a declarative agent, building custom APIs, the creation of a basic declarative agent, and progress towards developing fully skilled assistant that uses the APIs. 
 
@@ -96,14 +95,13 @@ In this lab, we will add an action as an **API plugin** to our agent along with 
 ☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. Select **Next >** to go to the next page.
 
 === 
-# Pre-lab confidence & knowledge survey
+
+# Pre-lab Confidence & Knowledge Survey
 @lab.ActivityGroup(initialsurvey)
 
-
 ===
-# Exercise 01: Build a backend API for the solution
+# Exercise 1: Build a Backend API for the Solution
 
-# Build a backend API
 In this exercise you will set up REST API based on Azure Functions and test the API. 
 
 ## Introduction
@@ -120,16 +118,14 @@ Begin by downloading the source code zip file into the lab environment by follow
 1. **Copy this download link**: Right-click on [this link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/extend-m365-copilot/trey-research-short-lab-start&filename=build-api-project) and select **Copy Link**
 
 2. **Download the project files**:
-
- - Open the Edge browser in the lab environment
- - Paste the copied link into the address bar and press Enter
- - The browser will automatically download a zip file named `build-api-project.zip`
+   - Open the Edge browser in the lab environment
+   - Paste the copied link into the address bar and press Enter
+   - The browser will automatically download a zip file named `build-api-project.zip`
 
 3. **Extract and open the project folder**:
-
- - Navigate to your Downloads folder (usually found in File Explorer)
- - Locate the downloaded `build-api-project.zip` file
- - Right-click on the zip file and select **Extract All** 
+   - Navigate to your Downloads folder (usually found in File Explorer)
+   - Locate the downloaded `build-api-project.zip` file
+   - Right-click on the zip file and select **Extract All** 
 
 This extracted folder is where you will be working for this entire lab. These instructions will refer to this folder as the "working folder" going forward. The next several exercises build on this one, and you should be able to continue working in the same folder.
 Close the browser and the file explorer.
@@ -139,10 +135,9 @@ Close the browser and the file explorer.
 2. Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
 3. You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
 4. Go to the **"Explorer"** view to see all files and folders in the working folder 
-
-1. Expand the **env** folder
-2. Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
-3. Ensure this line is present in the `.env.local.user` file:
+5. Expand the **env** folder
+6. Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
+7. Ensure this line is present in the `.env.local.user` file:
 
 ```
 SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
@@ -165,7 +160,7 @@ Username: +++@lab.CloudPortalCredential(User1).Username+++
 
 TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
 
-5. Once signed in, close the browser and return to the project window
+4. Once signed in, close the browser and return to the project window
 
 ### Run the application
 
@@ -173,19 +168,18 @@ Previously, you ensured you are logged into Microsoft 365 for the toolkit. If ev
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled and the accounts section with green checkmarks.](instructions315038/atk-accounts.png)
 
-Next, start debugging by using one of these methods:
-- Press **F5** to debug using Microsoft Edge
-- In the VS Code menu, select **Run > Start Debugging**
-- Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
+1. Next, start debugging by using one of these methods:
+ - Press **F5** to debug using Microsoft Edge
+ - In the VS Code menu, select **Run > Start Debugging**
+ - Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
 
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled, the debug mode active for local environment, and the option to start debugging in the Microsoft Edge browser.](instructions315038/f5.png)
 
 
-Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
+2. Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
 
 > [!hint] If you get a Windows Security alert asking "Do you want to allow public and private networks to access this app?" just select **Allow**.  
-
 
 ## Step 2: Test the API
 
@@ -229,11 +223,11 @@ Within the Azure Storage Explorer, open the "Emulator & Attached" selection and 
 ===
 
 
-# Build a declarative agent grounded with API you created as well as SharePoint files
+# Exercise 2: Build a Declarative Agent Grounded with API and SharePoint Files
 
 In this exercise, you will build an API plugin using the API you created in the previous exercise. Next, you'll integrate a declarative agent that is grounded in both the API plugin and specific SharePoint files.
 
-## Step 1: Upload sample documents
+## Step 1: Upload Sample Documents
 In this step you will upload sample documents which will be used by your declarative agent to respond to user prompts. These include some consulting documents such as Statements of Work, and a simple spreadsheet containing your hours as a consultant.
 
 ### Create a SharePoint site
@@ -249,11 +243,9 @@ Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and
 
 How to create this:
 
-• Use your first and last name initials (example: Sarah Johnson = SJ)
-
-• Add your favorite 2 digit number right after (no spaces)
-
-• Complete format: "Trey Research Legal - (Initials)(Number)"
+- Use your first and last name initials (example: Sarah Johnson = SJ)
+- Add your favorite 2 digit number right after (no spaces)
+- Complete format: "Trey Research Legal - (Initials)(Number)"
 
 **Examples:**
 
@@ -269,7 +261,7 @@ Once done select **"Next"** 2️⃣
 Then select your privacy settings and language, and click "Create site"
 After a few moments you will be asked to complete by selecting **"Finish"**. Then you will be presented with a new SharePoint site.
 
-### Upload the sample documents
+### Upload the Sample Documents
 1. In the Documents web part, select **"See all"** to view the document library page
 
 !IMAGE[upload-docs-07.png](instructions303310/upload-docs-07.png)
@@ -284,9 +276,9 @@ After a few moments you will be asked to complete by selecting **"Finish"**. The
 
 !IMAGE[upload-docs-09.png](instructions303310/upload-docs-09.png)
 
-## Step 2: Create the declarative agent
+## Step 2: Create the Declarative Agent
 
-### Add the declarative agent JSON to your project
+### Add the Declarative Agent JSON to Your Project
 
 1. Close the browser and return to the working folder in VS Code
 2. Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
@@ -331,7 +323,7 @@ After a few moments you will be asked to complete by selecting **"Finish"**. The
 }
 ```
 Notice that the file includes a name, description, and instructions for the declarative agent. Notice that as part of the instructions, Copilot is instructed to "Always remind users of the Trey motto, 'Always be Billing!'." You should see this when you prompt Copilot in the next step.
-### Add the URL of your SharePoint site to the declarative agent
+### Add the URL of Your SharePoint Site to the Declarative Agent
 Under "Capabilities" you will notice a SharePoint file container. While Microsoft 365 Copilot may reference any documents in SharePoint or OneDrive, this declarative agent will only access files in the Trey Research Legal Documents site you created in earlier step.
 ```
 "capabilities": [
@@ -349,7 +341,7 @@ Notice that the SharePoint URL is actually an environment variable `SHAREPOINT_D
 ```
 SHAREPOINT_DOCS_URL=https://<mytenant>.sharepoint.com/sites/<TreyResearchLegaldocuments_NAME>
 ```
-### Examine the API Plugin files
+### Examine the API Plugin Files
 Within the trey-declarative-agent.json file, you'll find an "actions" section, which tells the declarative agent to access the Trey Research API.
 ```
 "actions": [
@@ -445,7 +437,7 @@ Scrolling down you can find the runtime settings:
 ],
 ```
 They include a pointer to the trey-definition.json file, and an enumeration of the available functions.
-### Add the declarative agent to your app manifest
+### Add the Declarative Agent to Your App Manifest
 1. Open the **manifest.json** file within the **appPackage** directory
 2. Add a new `"copilotAgents"` object with a `"declarativeAgents"` object inside, just before the `"staticTabs"` object, as follows. This references the declarative agent JSON file you created in the previous step:
 ```
@@ -459,7 +451,7 @@ They include a pointer to the trey-definition.json file, and an enumeration of t
   },
   ```
 Be sure to save your work.
-### Remove the dummy feature from the app manifest
+### Remove the Dummy Feature from the App Manifest
 The initial solution that you ran in the previous exercise didn't have a declarative agent yet, so the manifest would not install because it had no features. We added a "dummy" feature, which is a static tab pointing to the Copilot Developer Camp home page. This would allow users to view the Copilot Developer Camp website in a tab within Teams, Outlook, and the Microsoft 365 app ([https://office.com](https://office.com)).
 
 If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know all about them. If not, don't worry about it-just delete these lines from **manifest.json** as they aren't needed anymore:
@@ -479,12 +471,12 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
   "microsoft.github.io"
 ],
 ```
-## Step 3: Run and test the declarative agent
-### Run the new project
+## Step 3: Run and Test the Declarative Agent
+### Run the New Project
 1. If you're still in the debugger, stop it to force a complete re-deployment
 2. Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
 
-### Test the declarative agent
+### Test the Declarative Agent
 
 You should be automatically redirected to a browser tab where the "Trey Genie local" agent is launched in an immersive experience. 
 
@@ -533,12 +525,12 @@ You've completed adding a declarative agent to your API plugin. Proceed to wrap 
 
 ===
 
-#Post-lab confidence & knowledge survey
+# Post-lab Confidence & Knowledge Survey
 @lab.ActivityGroup(completionsurvey)
 
 ===
 
-# Wrap up
+# Wrap Up
 
 ---
 ## Next Steps
