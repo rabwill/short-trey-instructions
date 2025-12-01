@@ -8,8 +8,28 @@ Please be advised that the live lab environment may be impacted by ongoing produ
 >
 > It is important that you complete all lab steps in the lab environment. Do not use personal or work/demo environments to complete the lab steps.
 
+## Before you start
+
 > [!TIP]
-> As you follow the instructions in this pane, look for the +++icon+++ to copy code or text directly into the virtual machine. This is especially useful for commands and configuration steps but double-check formatting or indentation after pasting!
+> As you follow the instructions in this pane, whenever you see a +++icon+++, you can use it to copy text from the instruction pane into the virtual machine interface. This is particularly useful to copy code; but bear in mind you may need to modify the pasted code to fix indent levels or formatting before running it!
+
+
+## Sign into Windows
+
+In the virtual machine, sign into Windows using the following Windows credentials given on the "Resources" panel on your right where this instruction is,  specifically for **Win11-Pro-Base** :
+
+- **Username**: +++LabUser+++
+- **Password**: +++Pa$$w0rd+++
+
+The same "Resources" panel also provides you with the credentials to login to Microsoft 365 tenant for this lab.
+
+## Access Visual Studio Code
+
+Once signed into the machine, you will be able to acces VS Code from the desktop. Open VS Code.
+
+>[!TIP]
+> When you  open the folder in VS Code, you may see get a prompt window asking if you trust the authors of the files in the folder. This is expected and you can safely select **Yes, I trust the authors**. The dialog is a security safeguard that helps you decide whether to run all features or limit execution based on the trustworthiness of the code authors. If you're opening your own code or from a reliable source, it's safe to trust.
+
 
 ===
 
