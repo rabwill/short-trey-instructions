@@ -492,7 +492,7 @@ If not you have probably hit an issue as below:
 
 !IMAGE[launch-error.png](instructions315038/launch-error.png)
 
-You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in a new browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
+You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in the browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
 
 !IMAGE[flyout.png](instructions315038/flyout.png)
 
@@ -526,7 +526,7 @@ If you go back to your VS Code project under "Terminal", you will also see how t
 
 !IMAGE[api-call-code.png](instructions315038/api-call-code.png)
 
-CONGRATULATIONS!
+**CONGRATULATIONS!**
 
 You've completed adding a declarative agent to your API plugin. Proceed to wrap up. 
 
