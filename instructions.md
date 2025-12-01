@@ -284,7 +284,8 @@ How to create this:
 
 - [ ] Close the browser and return to the working folder in VS Code
 - [ ] Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
-- [ ] Copy the following JSON into this file and save it:
+- [ ] Copy the following JSON into this file and save it (Ctrl+S or Cmd+S):
+
 ```
 {
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
