@@ -8,7 +8,38 @@ Please be advised that the live lab environment may be impacted by ongoing produ
 >
 > It is important that you complete all lab steps in the lab environment. Do not use personal or work/demo environments to complete the lab steps.
 
+> [!TIP]
+> As you follow the instructions in this pane, look for the +++icon+++ to copy code or text directly into the virtual machine. This is especially useful for commands and configuration steps but double-check formatting or indentation after pasting!
+
 ===
+
+
+@lab.title 
+
+
+###Learning Objectives: 
+
+During this lab, you will construct a customized assistant tailored for a Human Resources department. The process will begin with understanding the fundamentals on creating a declarative agent, building custom APIs, the creation of a basic declarative agent, and progress towards developing fully skilled assistant that uses the APIs. 
+
+The sections in this lab are:
+
+- What are Declarative Agents?
+- Pre-lab Confidence & Knowledge Survey
+- Exercise 1:  Build a Backend API
+- Exercise 2:  Build a declarative agent grounded with API you created as well as SharePoint files
+- Post-lab Confidence & Knowledge Survey
+- Wrap up
+
+
+> [!knowledge] 
+> All of these labs (and more) are available on [Copilot Developer Camp](https://aka.ms/copilotdevcamp). Subscribe to the [Microsoft365Developer YouTube channel](https://www.youtube.com/@Microsoft365Developer). 
+
+**Note** There are "Pre-lab Confidence & Knowledge Survey" and  "Post-lab Confidence & Knowledge Survey". Make sure you fill in and select "Submit your responses".
+
+ !IMAGE[survey.jpg](instructions303310/survey.jpg)
+
+=== 
+
 # What are Declarative Agents? 
 
 **Declarative Agents** leverage the same scalable infrastructure and platform as Microsoft 365 Copilot, tailored specifically to focus on a particular area of your needs. They function as subject matter experts in a specific domain or business need, allowing you to use the same interface as standard Microsoft 365 Copilot chat while ensuring they focus exclusively on the specific task at hand.
@@ -44,21 +75,6 @@ In this lab, we will add an action as an **API plugin** to our agent along with 
 
 ☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. Select **Next >** to go to the next page.
 
-===
-# Learning Objectives
-
-In this lab, you'll learn the fundamentals of creating a declarative agent, building custom APIs, and developing a fully skilled assistant that uses those APIs. 
-
-The lab includes the following exercises:
-
-- **Exercise 1**: Build a backend API
-- **Exercise 2**: Build a declarative agent grounded with the API you created as well as SharePoint files
-
-> [!knowledge]
-> All of these labs (and more) are available on [Copilot Developer Camp](https://aka.ms/copilotdevcamp). Subscribe to the [Microsoft365Developer YouTube channel](https://www.youtube.com/@Microsoft365Developer).
-
-> [!TIP]
-> As you follow the instructions in this pane, look for the +++icon+++ to copy code or text directly into the virtual machine. This is especially useful for commands and configuration steps but double-check formatting or indentation after pasting!
 === 
 # Pre-lab confidence & knowledge survey
 @lab.ActivityGroup(initialsurvey)
