@@ -124,7 +124,7 @@ Begin by downloading the source code zip file into the lab environment by follow
  - Open the Edge browser in the lab environment
  - Paste the copied link into the address bar and press Enter
  - The browser will automatically download a zip file named `build-api-project.zip`
- - 
+
 3. **Extract and open the project folder**:
 
  - Navigate to your Downloads folder (usually found in File Explorer)
@@ -239,7 +239,25 @@ Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and
 !IMAGE[upload-docs-02.png](instructions303310/upload-docs-02.png)
 
 2. Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
-3. Give your site a name such as **"Trey Research legal documents"** 1️⃣ and click **"Next"** 2️⃣
+3. Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
+
+How to create this:
+
+• Use your first and last name initials (example: Sarah Johnson = SJ)
+
+• Add your favorite 2 digit number right after (no spaces)
+
+• Complete format: "Trey Research Legal - (Initials)(Number)"
+
+**Examples:**
+
+✅ "Trey Research Legal - SJ7" (Sarah Johnson, favorite number 7)
+
+✅ "Trey Research Legal - MK42" (Mike Kim, favorite number 42)  
+
+✅ "Trey Research Legal - AL99" (Anna Lopez, favorite number 99)
+
+Once done select **"Next"** 2️⃣
 
 !IMAGE[upload-docs-05.png](instructions303310/upload-docs-05.png)
 Then select your privacy settings and language, and click "Create site"
