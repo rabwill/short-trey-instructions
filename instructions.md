@@ -115,14 +115,14 @@ The code consists of Azure Functions written in TypeScript, backed by a database
 ### Download the starting application
 Begin by downloading the source code zip file into the lab environment by following these steps:
 
-1. - [ ] **Copy this download link**: Right-click on [this link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/extend-m365-copilot/trey-research-short-lab-start&filename=build-api-project) and select **Copy Link**
+- [ ] **Copy this download link**: Right-click on [this link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/extend-m365-copilot/trey-research-short-lab-start&filename=build-api-project) and select **Copy Link**
 
-2. - [ ] **Download the project files**:
+- [ ] **Download the project files**:
    - [ ] Open the Edge browser in the lab environment
    - [ ] Paste the copied link into the address bar and press Enter
    - [ ] The browser will automatically download a zip file named `build-api-project.zip`
 
-3. - [ ] **Extract and open the project folder**:
+- [ ] **Extract and open the project folder**:
    - [ ] Navigate to your Downloads folder (usually found in File Explorer)
    - [ ] Locate the downloaded `build-api-project.zip` file
    - [ ] Right-click on the zip file and select **Extract All** 
@@ -131,19 +131,19 @@ This extracted folder is where you will be working for this entire lab. These in
 Close the browser and the file explorer.
 
 ### Set up the local environment files
-1. - [ ] If not already open, open **Visual Studio Code** from the **Desktop**
-2. - [ ] Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
-3. - [ ] You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
-4. - [ ] Go to the **"Explorer"** view to see all files and folders in the working folder 
-5. - [ ] Expand the **env** folder
-6. - [ ] Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
-7. - [ ] Ensure this line is present in the `.env.local.user` file:
+- [ ] If not already open, open **Visual Studio Code** from the **Desktop**
+- [ ] Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
+- [ ] You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
+- [ ] Go to the **"Explorer"** view to see all files and folders in the working folder 
+- [ ] Expand the **env** folder
+- [ ] Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
+- [ ] Ensure this line is present in the `.env.local.user` file:
 
 ```
 SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
 ```
 ### Install the dependencies
-1. - [ ] Open a command line in your working folder by selecting **Terminal** > **New Terminal** in Visual Studio Code, then type and press Enter on the following command to install the required packages:
+- [ ] Open a command line in your working folder by selecting **Terminal** > **New Terminal** in Visual Studio Code, then type and press Enter on the following command to install the required packages:
 
 ```
 npm install
@@ -152,15 +152,15 @@ npm install
 ### Sign in to Microsoft 365 Agents Toolkit
 You'll need to sign into the Microsoft 365 Agents Toolkit in order to upload and test your application from within it. 
 
-1. - [ ] Within the project window, select the **Microsoft 365 Agents Toolkit** icon <img width="24" alt="m365atk-icon" src="https://github.com/user-attachments/assets/b5a5a093-2344-4276-b7e7-82553ee73199" /> from the left side menu. This will open the Agent Toolkit's activity bar with sections like Accounts, Environment, Development, etc.
-2. - [ ] Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **Sign in**
-3. - [ ] Use the credentials available to you from the **"Resources"** tab in Skillable:
+- [ ] Within the project window, select the **Microsoft 365 Agents Toolkit** icon <img width="24" alt="m365atk-icon" src="https://github.com/user-attachments/assets/b5a5a093-2344-4276-b7e7-82553ee73199" /> from the left side menu. This will open the Agent Toolkit's activity bar with sections like Accounts, Environment, Development, etc.
+- [ ] Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **Sign in**
+- [ ] Use the credentials available to you from the **"Resources"** tab in Skillable:
 
 Username: +++@lab.CloudPortalCredential(User1).Username+++
 
 TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
 
-4. - [ ] Once signed in, close the browser and return to the project window
+- [ ] Once signed in, close the browser and return to the project window
 
 ### Run the application
 
@@ -168,16 +168,16 @@ Previously, you ensured you are logged into Microsoft 365 for the toolkit. If ev
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled and the accounts section with green checkmarks.](instructions315038/atk-accounts.png)
 
-1. - [ ] Next, start debugging by using one of these methods:
- -  Press **F5** to debug using Microsoft Edge
- -  In the VS Code menu, select **Run > Start Debugging**
- -  Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
+- [ ] Next, start debugging by using one of these methods:
+   - [ ] Press **F5** to debug using Microsoft Edge
+   - [ ] In the VS Code menu, select **Run > Start Debugging**
+   - [ ] Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
 
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled, the debug mode active for local environment, and the option to start debugging in the Microsoft Edge browser.](instructions315038/f5.png)
 
 
-2. - [ ] Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
+- [ ] Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
 
 > [!hint] If you get a Windows Security alert asking "Do you want to allow public and private networks to access this app?" just select **Allow**.  
 
@@ -234,12 +234,12 @@ In this step you will upload sample documents which will be used by your declara
 - [ ] Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and find the **"SharePoint"** app under **"Apps"** from the browser inside your Skillable environment.
 
 !IMAGE[upload-docs-01.png](instructions303310/upload-docs-01.png)
-1. - [ ] Click **"Create site"** 1️⃣ and choose **"Team site"** 2️⃣
+- [ ] Click **"Create site"** 1️⃣ and choose **"Team site"** 2️⃣
 
 !IMAGE[upload-docs-02.png](instructions303310/upload-docs-02.png)
 
-2. - [ ] Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
-3. - [ ] Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
+- [ ] Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
+- [ ] Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
 
 How to create this:
 
@@ -262,17 +262,17 @@ How to create this:
 - [ ] After a few moments you will be asked to complete by selecting **"Finish"**. Then you will be presented with a new SharePoint site.
 
 ### Upload the Sample Documents
-1. - [ ] In the Documents web part, select **"See all"** to view the document library page
+- [ ] In the Documents web part, select **"See all"** to view the document library page
 
 !IMAGE[upload-docs-07.png](instructions303310/upload-docs-07.png)
 
-2. - [ ] Click the **"Upload"** 1️⃣ toolbar button and select **"Files"** 2️⃣
+- [ ] Click the **"Upload"** 1️⃣ toolbar button and select **"Files"** 2️⃣
 
 !IMAGE[upload-docs-08.png](instructions303310/upload-docs-08.png)
 
-3. - [ ] Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
+- [ ] Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
 
-4. - [ ] Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
+- [ ] Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
 
 !IMAGE[upload-docs-09.png](instructions303310/upload-docs-09.png)
 
@@ -280,9 +280,9 @@ How to create this:
 
 ### Add the Declarative Agent JSON to Your Project
 
-1. - [ ] Close the browser and return to the working folder in VS Code
-2. - [ ] Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
-3. - [ ] Copy the following JSON into this file and save it:
+- [ ] Close the browser and return to the working folder in VS Code
+- [ ] Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
+- [ ] Copy the following JSON into this file and save it:
 ```
 {
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
@@ -438,8 +438,8 @@ Scrolling down you can find the runtime settings:
 ```
 They include a pointer to the trey-definition.json file, and an enumeration of the available functions.
 ### Add the Declarative Agent to Your App Manifest
-1. - [ ] Open the **manifest.json** file within the **appPackage** directory
-2. - [ ] Add a new `"copilotAgents"` object with a `"declarativeAgents"` object inside, just before the `"staticTabs"` object, as follows. This references the declarative agent JSON file you created in the previous step:
+- [ ] Open the **manifest.json** file within the **appPackage** directory
+- [ ] Add a new `"copilotAgents"` object with a `"declarativeAgents"` object inside, just before the `"staticTabs"` object, as follows. This references the declarative agent JSON file you created in the previous step:
 ```
   "copilotAgents": {
     "declarativeAgents": [
@@ -473,8 +473,8 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
 ```
 ## Step 3: Run and Test the Declarative Agent
 ### Run the New Project
-1. - [ ] If you're still in the debugger, stop it to force a complete re-deployment
-2. - [ ] Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
+- [ ] If you're still in the debugger, stop it to force a complete re-deployment
+- [ ] Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
 
 ### Test the Declarative Agent
 
