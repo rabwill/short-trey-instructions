@@ -129,12 +129,13 @@ Begin by downloading the source code zip file into the lab environment by follow
 
  - Navigate to your Downloads folder (usually found in File Explorer)
  - Locate the downloaded `build-api-project.zip` file
- - Right-click on the zip file and select **Extract All** or **Extract Here**
+ - Right-click on the zip file and select **Extract All** 
 
 This extracted folder is where you will be working for this entire lab. These instructions will refer to this folder as the "working folder" going forward. The next several exercises build on this one, and you should be able to continue working in the same folder.
+Close the browser and the file explorer.
 
 ### Set up the local environment files
-1. Open **Visual Studio Code** from the **Desktop**
+1. If not already open, open **Visual Studio Code** from the **Desktop**
 2. Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
 3. You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
 4. Go to the **"Explorer"** view to see all files and folders in the working folder 
@@ -157,9 +158,14 @@ npm install
 You'll need to sign into the Microsoft 365 Agents Toolkit in order to upload and test your application from within it. 
 
 1. Within the project window, select the **Microsoft 365 Agents Toolkit** icon <img width="24" alt="m365atk-icon" src="https://github.com/user-attachments/assets/b5a5a093-2344-4276-b7e7-82553ee73199" /> from the left side menu. This will open the Agent Toolkit's activity bar with sections like Accounts, Environment, Development, etc.
-2. Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **"Sign in"
-3. Use the credentials available to you from the **"Resources"** tab in Skillable
-4. Once signed in, close the browser and return to the project window
+2. Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **Sign in**
+3. Use the credentials available to you from the **"Resources"** tab in Skillable:
+
+Username: +++@lab.CloudPortalCredential(User1).Username+++
+
+TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
+
+5. Once signed in, close the browser and return to the project window
 
 ### Run the application
 
@@ -274,7 +280,7 @@ After a few moments you will be asked to complete by selecting **"Finish"**. The
 
 3. Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
 
-Make note of the site url, which will resemble "https://{{yourtenant}}.sharepoint.com/sites/TreyResearchlegaldocuments", as you will need it in the next step.
+4. Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
 
 !IMAGE[upload-docs-09.png](instructions303310/upload-docs-09.png)
 
@@ -479,7 +485,14 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
 2. Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
 
 ### Test the declarative agent
-You should be automatically redirected to a browser tab where the "Trey Genie local" agent is launched in an immersive experience. If not, open the Copilot chat and use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
+
+You should be automatically redirected to a browser tab where the "Trey Genie local" agent is launched in an immersive experience. 
+
+If not you have probably hit an issue as below:
+
+!IMAGE[launch-error.png](instructions315038/launch-error.png)
+
+You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in a new browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
 
 !IMAGE[flyout.png](instructions315038/flyout.png)
 
@@ -503,7 +516,7 @@ Once allowed, the agent will call the API "api/me" and return information based 
 
 Scroll to the end of the response to find source or citations. Select Source 1️⃣. In the Source tab, under citations expand Avery Howard and you will see the rich card response using adaptive cards 2️⃣.
 
-!IMAGE[final-response.png](instructions315038/final-response.png)
+!IMAGE[final-me-response.png](instructions315038/final-me-response.png)
 
 Avery Howard is the logged in user as we have not yet implemented Auth.
 
