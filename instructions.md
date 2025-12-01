@@ -38,7 +38,7 @@ The same "Resources" panel also provides you with the credentials to login to Mi
 
 ## Learning Objectives 
 
-During this lab, you will construct a customized assistant tailored for a Human Resources department. The process will begin with understanding the fundamentals on creating a declarative agent, building custom APIs, the creation of a basic declarative agent, and progress towards developing fully skilled assistant that uses the APIs. 
+During this lab, you will construct a customized assistant tailored for a Human Resources department. The process will begin with understanding the fundamentals of creating a declarative agent, building custom APIs, the creation of a basic declarative agent, and progress towards developing a fully skilled assistant that uses the APIs. 
 
 The sections in this lab are:
 
@@ -92,7 +92,7 @@ You can enhance the agent's focus on context and data by not only adding instruc
 
 In this lab, we will add an action as an **API plugin** to our agent along with the **OneDrive and SharePoint** capability.
 
-☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. - Select **Next >** to go to the next page.
+☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. - [ ] Select **Next >** to go to the next page.
 
 === 
 
@@ -102,10 +102,10 @@ In this lab, we will add an action as an **API plugin** to our agent along with 
 ===
 # Exercise 1: Build a Backend API for the Solution
 
-In this exercise you will set up REST API based on Azure Functions and test the API. 
+In this exercise, you will set up a REST API based on Azure Functions and test the API. 
 
 ## Introduction
-You will set up a REST API for Trey Research, a hypothetical consulting company. It provides API's for accessing information about consultants (using the `/api/consultants` path) and about the current user (using the `/api/me` path). In this exercise the API doesn't support authentication, so the current user will always be "Avery Howard".
+You will set up a REST API for Trey Research, a hypothetical consulting company. It provides APIs for accessing information about consultants (using the `/api/consultants` path) and about the current user (using the `/api/me` path). In this exercise, the API doesn't support authentication, so the current user will always be "Avery Howard".
 
 The code consists of Azure Functions written in TypeScript, backed by a database in Azure Table storage. When you run the app locally, table storage will be provided by the Azurite storage emulator.
 
@@ -128,7 +128,7 @@ Begin by downloading the source code zip file into the lab environment by follow
    - [ ] Right-click on the zip file and select **Extract All** 
 
 This extracted folder is where you will be working for this entire lab. These instructions will refer to this folder as the "working folder" going forward. The next several exercises build on this one, and you should be able to continue working in the same folder.
-Close the browser and the file explorer.
+- [ ] Close the browser and the file explorer.
 
 ### Set up the local environment files
 - [ ] If not already open, open **Visual Studio Code** from the **Desktop**
@@ -183,7 +183,7 @@ Previously, you ensured you are logged into Microsoft 365 for the toolkit. If ev
 
 ## Step 2: Test the API
 
-In this step you'll test the API manually and, in the process, learn about what it does.
+In this step, you'll test the API manually and, in the process, learn about what it does.
 
 ### GET the /me resource
 - [ ] With the debugger still running 1️⃣, switch to the code view in Visual Studio Code 2️⃣. Open the **http** folder and select the **treyResearchAPI.http** file 3️⃣.
@@ -198,7 +198,9 @@ You should see the response in the right panel, and a log of the request in the 
 - [ ] Now try sending the POST request for `{{base_url}}/me/chargeTime`. This will charge 3 hours of Avery's time to the Woodgrove Bank project. This is stored in the project database, which is a locally hosted emulation of Azure Table Storage, so the system will remember that Avery has delivered these hours. (To test this, call the `/me` resource again and look at the "deliveredThisMonth" property under the Woodgrove project).
 
 - [ ] Continue to try the various GET requests in the **.http** file to find consultants with various skills, certifications, roles, and availability. All this information will be available to Copilot so it can answer user prompts.
-- [ ] Once done testing, stop the debugger by going to the VS Code menu **Run > Stop Debugging**. Also close all windows inside VS Code like .http file 1️⃣ as well as the Response view 2️⃣.
+- [ ] Once done testing, stop the debugger by going to the VS Code menu **Run > Stop Debugging**. 
+
+- [ ] Close all windows inside VS Code like .http file 1️⃣ as well as the Response view 2️⃣.
 
 !IMAGE[close all windows](instructions315038/iyp3uzg9.jpg)
 
@@ -228,7 +230,7 @@ Within the Azure Storage Explorer, open the "Emulator & Attached" selection and 
 In this exercise, you will build an API plugin using the API you created in the previous exercise. Next, you'll integrate a declarative agent that is grounded in both the API plugin and specific SharePoint files.
 
 ## Step 1: Upload Sample Documents
-In this step you will upload sample documents which will be used by your declarative agent to respond to user prompts. These include some consulting documents such as Statements of Work, and a simple spreadsheet containing your hours as a consultant.
+In this step, you will upload sample documents which will be used by your declarative agent to respond to user prompts. These include some consulting documents such as Statements of Work, and a simple spreadsheet containing your hours as a consultant.
 
 ### Create a SharePoint site
 - [ ] Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and find the **"SharePoint"** app under **"Apps"** from the browser inside your Skillable environment.
@@ -289,7 +291,7 @@ How to create this:
     "version": "v1.6",
     "name": "Trey Genie Local",
     "description": "You are a handy assistant for consultants at Trey Research, a boutique consultancy specializing in software development and clinical trials. ",
-    "instructions": "You are consulting agent. Greet users professionally and introduce yourself as the Trey Genie. Offer assistance with their consulting projects and hours. Remind users of the Trey motto, 'Always be Billing!'. Your primary role is to support consultants by helping them manage their projects and hours. Using the TreyResearch action, you can: You can assist users in retrieving consultant profiles or project details for administrative purposes but do not participate in decisions related to hiring, performance evaluation, or assignments. You can assist users to find consultants data based on their names, project assignments, skills, roles, and certifications. You can assist users to retrieve project details based on the project or client name. You can assist users to charge hours to a project. You can assist users to add a consultant to a project. If a user inquires about the hours they have billed, charged, or worked on a project, rephrase the request to ask about the hours they have delivered. Additionally, you may provide general consulting advice. If there is any confusion, encourage users to consult their Managing Consultant. Avoid providing legal advice.",
+    "instructions": "You are a consulting agent. Greet users professionally and introduce yourself as the Trey Genie. Offer assistance with their consulting projects and hours. Remind users of the Trey motto, 'Always be Billing!'. Your primary role is to support consultants by helping them manage their projects and hours. Using the TreyResearch action, you can: You can assist users in retrieving consultant profiles or project details for administrative purposes but do not participate in decisions related to hiring, performance evaluation, or assignments. You can assist users to find consultants data based on their names, project assignments, skills, roles, and certifications. You can assist users to retrieve project details based on the project or client name. You can assist users to charge hours to a project. You can assist users to add a consultant to a project. If a user inquires about the hours they have billed, charged, or worked on a project, rephrase the request to ask about the hours they have delivered. Additionally, you may provide general consulting advice. If there is any confusion, encourage users to consult their Managing Consultant. Avoid providing legal advice.",
     "conversation_starters": [
         {
             "title": "Find consultants",
@@ -324,7 +326,7 @@ How to create this:
 ```
 Notice that the file includes a name, description, and instructions for the declarative agent. Notice that as part of the instructions, Copilot is instructed to "Always remind users of the Trey motto, 'Always be Billing!'." You should see this when you prompt Copilot in the next step.
 ### Add the URL of Your SharePoint Site to the Declarative Agent
-Under "Capabilities" you will notice a SharePoint file container. While Microsoft 365 Copilot may reference any documents in SharePoint or OneDrive, this declarative agent will only access files in the Trey Research Legal Documents site you created in earlier step.
+Under "Capabilities" you will notice a SharePoint file container. While Microsoft 365 Copilot may reference any documents in SharePoint or OneDrive, this declarative agent will only access files in the Trey Research Legal Documents site you created in an earlier step.
 ```
 "capabilities": [
     {
@@ -360,7 +362,7 @@ These two files are used to describe your API to Copilot. They were already incl
 
  In this step, take a moment to examine these files. 
 
- In **appPackage/apiSpecificationFile/trey-definition.json**, you'll find the general description of the application. This includes the server URL; Agents Toolkit will create a [developer tunnel](https://learn.microsoft.com/azure/developer/dev-tunnels/) to expose your local API on the Internet, and replace the token `"${{OPENAPI_SERVER_URL}}` with the public URL. It then goes on to describe every resource path, verb, and paremeter in the API. Notice the detailed descriptions; these are important to help Copilot understand how the API is to be used.
+ In **appPackage/apiSpecificationFile/trey-definition.json**, you'll find the general description of the application. This includes the server URL; Agents Toolkit will create a [developer tunnel](https://learn.microsoft.com/azure/developer/dev-tunnels/) to expose your local API on the Internet, and replace the token `"${{OPENAPI_SERVER_URL}}` with the public URL. It then goes on to describe every resource path, verb, and parameter in the API. Notice the detailed descriptions; these are important to help Copilot understand how the API is to be used.
  ```
  {
   "openapi": "3.0.1",
@@ -450,7 +452,7 @@ They include a pointer to the trey-definition.json file, and an enumeration of t
     ]
   },
   ```
-Be sure to save your work.
+- [ ] Be sure to save your work.
 ### Remove the Dummy Feature from the App Manifest
 The initial solution that you ran in the previous exercise didn't have a declarative agent yet, so the manifest would not install because it had no features. We added a "dummy" feature, which is a static tab pointing to the Copilot Developer Camp home page. This would allow users to view the Copilot Developer Camp website in a tab within Teams, Outlook, and the Microsoft 365 app ([https://office.com](https://office.com)).
 
@@ -480,7 +482,7 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
 
 You should be automatically redirected to a browser tab where the "Trey Genie local" agent is launched in an immersive experience. 
 
-If not you have probably hit an issue as below:
+If not, you have probably hit an issue as below:
 
 !IMAGE[launch-error.png](instructions315038/launch-error.png)
 
@@ -510,7 +512,7 @@ Scroll to the end of the response to find source or citations. Select Source 1�
 
 !IMAGE[final-me-response.png](instructions315038/final-me-response.png)
 
-Avery Howard is the logged in user as we have not yet implemented Auth.
+Avery Howard is the logged-in user as we have not yet implemented Auth.
 
 
 
