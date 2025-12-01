@@ -16,7 +16,7 @@ Please be advised that the live lab environment may be impacted by ongoing produ
 
 ## Sign into Windows
 
-In the virtual machine, sign into Windows using the following Windows credentials given on the "Resources" panel on your right where this instruction is,  specifically for **Win11-Pro-Base** :
+- [ ] In the virtual machine, sign into Windows using the following Windows credentials given on the "Resources" panel on your right where this instruction is,  specifically for **Win11-Pro-Base** :
 
 - **Username**: +++LabUser+++
 - **Password**: +++Pa$$w0rd+++
@@ -25,7 +25,7 @@ The same "Resources" panel also provides you with the credentials to login to Mi
 
 ## Access Visual Studio Code
 
-Once signed into the machine, you will be able to access VS Code from the desktop. Open VS Code.
+- [ ] Once signed into the machine, you will be able to access VS Code from the desktop. Open VS Code.
 
 >[!TIP]
 > When you open the folder in VS Code, you may get a prompt window asking if you trust the authors of the files in the folder. This is expected and you can safely select **Yes, I trust the authors**. The dialog is a security safeguard that helps you decide whether to run all features or limit execution based on the trustworthiness of the code authors. If you're opening your own code or from a reliable source, it's safe to trust.
@@ -53,7 +53,7 @@ The sections in this lab are:
 > [!knowledge] 
 > All of these labs (and more) are available on [Copilot Developer Camp](https://aka.ms/copilotdevcamp). Subscribe to the [Microsoft365Developer YouTube channel](https://www.youtube.com/@Microsoft365Developer). 
 
-**Note** There are "Pre-lab Confidence & Knowledge Survey" and  "Post-lab Confidence & Knowledge Survey". Make sure you fill in and select "Submit your responses".
+**Note** There are "Pre-lab Confidence & Knowledge Survey" and  "Post-lab Confidence & Knowledge Survey". - [ ] Make sure you fill in and select "Submit your responses".
 
  !IMAGE[survey.jpg](instructions303310/survey.jpg)
 
@@ -92,7 +92,7 @@ You can enhance the agent's focus on context and data by not only adding instruc
 
 In this lab, we will add an action as an **API plugin** to our agent along with the **OneDrive and SharePoint** capability.
 
-☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. Select **Next >** to go to the next page.
+☑️  Well done, you've built a solid foundation in the theory of Declarative Agents. - Select **Next >** to go to the next page.
 
 === 
 
@@ -115,35 +115,35 @@ The code consists of Azure Functions written in TypeScript, backed by a database
 ### Download the starting application
 Begin by downloading the source code zip file into the lab environment by following these steps:
 
-1. **Copy this download link**: Right-click on [this link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/extend-m365-copilot/trey-research-short-lab-start&filename=build-api-project) and select **Copy Link**
+1. - [ ] **Copy this download link**: Right-click on [this link](https://download-directory.github.io/?url=https://github.com/microsoft/copilot-camp/tree/main/src/extend-m365-copilot/trey-research-short-lab-start&filename=build-api-project) and select **Copy Link**
 
-2. **Download the project files**:
-   - Open the Edge browser in the lab environment
-   - Paste the copied link into the address bar and press Enter
-   - The browser will automatically download a zip file named `build-api-project.zip`
+2. - [ ] **Download the project files**:
+   - [ ] Open the Edge browser in the lab environment
+   - [ ] Paste the copied link into the address bar and press Enter
+   - [ ] The browser will automatically download a zip file named `build-api-project.zip`
 
-3. **Extract and open the project folder**:
-   - Navigate to your Downloads folder (usually found in File Explorer)
-   - Locate the downloaded `build-api-project.zip` file
-   - Right-click on the zip file and select **Extract All** 
+3. - [ ] **Extract and open the project folder**:
+   - [ ] Navigate to your Downloads folder (usually found in File Explorer)
+   - [ ] Locate the downloaded `build-api-project.zip` file
+   - [ ] Right-click on the zip file and select **Extract All** 
 
 This extracted folder is where you will be working for this entire lab. These instructions will refer to this folder as the "working folder" going forward. The next several exercises build on this one, and you should be able to continue working in the same folder.
 Close the browser and the file explorer.
 
 ### Set up the local environment files
-1. If not already open, open **Visual Studio Code** from the **Desktop**
-2. Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
-3. You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
-4. Go to the **"Explorer"** view to see all files and folders in the working folder 
-5. Expand the **env** folder
-6. Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
-7. Ensure this line is present in the `.env.local.user` file:
+1. - [ ] If not already open, open **Visual Studio Code** from the **Desktop**
+2. - [ ] Open your working folder (the extracted **build-api-project** folder) in Visual Studio Code
+3. - [ ] You might see a popup dialog asking you to "trust the authors of the files in this folder". If so, select **"Yes, I trust the authors"** to proceed
+4. - [ ] Go to the **"Explorer"** view to see all files and folders in the working folder 
+5. - [ ] Expand the **env** folder
+6. - [ ] Copy and paste the `.env.local.user.sample` file and rename the copy to `.env.local.user`
+7. - [ ] Ensure this line is present in the `.env.local.user` file:
 
 ```
 SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
 ```
 ### Install the dependencies
-1. Open a command line in your working folder by selecting **Terminal** > **New Terminal** in Visual Studio Code, then type and press Enter on the following command to install the required packages:
+1. - [ ] Open a command line in your working folder by selecting **Terminal** > **New Terminal** in Visual Studio Code, then type and press Enter on the following command to install the required packages:
 
 ```
 npm install
@@ -152,15 +152,15 @@ npm install
 ### Sign in to Microsoft 365 Agents Toolkit
 You'll need to sign into the Microsoft 365 Agents Toolkit in order to upload and test your application from within it. 
 
-1. Within the project window, select the **Microsoft 365 Agents Toolkit** icon <img width="24" alt="m365atk-icon" src="https://github.com/user-attachments/assets/b5a5a093-2344-4276-b7e7-82553ee73199" /> from the left side menu. This will open the Agent Toolkit's activity bar with sections like Accounts, Environment, Development, etc.
-2. Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **Sign in**
-3. Use the credentials available to you from the **"Resources"** tab in Skillable:
+1. - [ ] Within the project window, select the **Microsoft 365 Agents Toolkit** icon <img width="24" alt="m365atk-icon" src="https://github.com/user-attachments/assets/b5a5a093-2344-4276-b7e7-82553ee73199" /> from the left side menu. This will open the Agent Toolkit's activity bar with sections like Accounts, Environment, Development, etc.
+2. - [ ] Under the **"Accounts"** section, select **Sign in to Microsoft 365**. This will open a dialog with options to sign in, create a Microsoft 365 developer sandbox, or Cancel. Select **Sign in**
+3. - [ ] Use the credentials available to you from the **"Resources"** tab in Skillable:
 
 Username: +++@lab.CloudPortalCredential(User1).Username+++
 
 TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
 
-4. Once signed in, close the browser and return to the project window
+4. - [ ] Once signed in, close the browser and return to the project window
 
 ### Run the application
 
@@ -168,16 +168,16 @@ Previously, you ensured you are logged into Microsoft 365 for the toolkit. If ev
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled and the accounts section with green checkmarks.](instructions315038/atk-accounts.png)
 
-1. Next, start debugging by using one of these methods:
- - Press **F5** to debug using Microsoft Edge
- - In the VS Code menu, select **Run > Start Debugging**
- - Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
+1. - [ ] Next, start debugging by using one of these methods:
+ -  Press **F5** to debug using Microsoft Edge
+ -  In the VS Code menu, select **Run > Start Debugging**
+ -  Hover over the "local" environment and click the debugger symbol that appears 1️⃣, then select the browser of your choice 2️⃣
 
 
 !IMAGE[Visual Studio Code with the Agents Toolkit enabled, the debug mode active for local environment, and the option to start debugging in the Microsoft Edge browser.](instructions315038/f5.png)
 
 
-2. Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
+2. - [ ] Eventually a browser will open (it's faster after the first time) and ask to log in but you can skip logging in for now as we are only testing the API, but make sure you keep the browser minimized not closed.
 
 > [!hint] If you get a Windows Security alert asking "Do you want to allow public and private networks to access this app?" just select **Allow**.  
 
@@ -186,25 +186,25 @@ Previously, you ensured you are logged into Microsoft 365 for the toolkit. If ev
 In this step you'll test the API manually and, in the process, learn about what it does.
 
 ### GET the /me resource
-With the debugger still running 1️⃣, switch to the code view in Visual Studio Code 2️⃣. Open the **http** folder and select the **treyResearchAPI.http** file 3️⃣.
+- [ ] With the debugger still running 1️⃣, switch to the code view in Visual Studio Code 2️⃣. Open the **http** folder and select the **treyResearchAPI.http** file 3️⃣.
 
-Now click the **"Send Request"** link in the treyResearchAPI.http file just above the link `{{base_url}}/me` 6️⃣.
+- [ ] Now click the **"Send Request"** link in the treyResearchAPI.http file just above the link `{{base_url}}/me` 6️⃣.
 !IMAGE[run-in-ttk04.png](instructions303310/run-in-ttk04.png)
 
 You should see the response in the right panel, and a log of the request in the bottom panel. The response shows the information about the logged-in user, but since we haven't implemented authentication this time, the app will return information on the fictitious consultant "Avery Howard". Take a moment to scroll through the response to see details about Avery, including a list of project assignments.
 !IMAGE[run-in-ttk05.png](instructions303310/run-in-ttk05.png)
 
 ### Try the other methods and resources
-Now try sending the POST request for `{{base_url}}/me/chargeTime`. This will charge 3 hours of Avery's time to the Woodgrove Bank project. This is stored in the project database, which is a locally hosted emulation of Azure Table Storage, so the system will remember that Avery has delivered these hours. (To test this, call the `/me` resource again and look at the "deliveredThisMonth" property under the Woodgrove project).
+- [ ] Now try sending the POST request for `{{base_url}}/me/chargeTime`. This will charge 3 hours of Avery's time to the Woodgrove Bank project. This is stored in the project database, which is a locally hosted emulation of Azure Table Storage, so the system will remember that Avery has delivered these hours. (To test this, call the `/me` resource again and look at the "deliveredThisMonth" property under the Woodgrove project).
 
-Continue to try the various GET requests in the **.http** file to find consultants with various skills, certifications, roles, and availability. All this information will be available to Copilot so it can answer user prompts.
-Once done testing, stop the debugger by going to the VS Code menu **Run > Stop Debugging**. Also close all windows inside VS Code like .http file 1️⃣ as well as the Response view 2️⃣.
+- [ ] Continue to try the various GET requests in the **.http** file to find consultants with various skills, certifications, roles, and availability. All this information will be available to Copilot so it can answer user prompts.
+- [ ] Once done testing, stop the debugger by going to the VS Code menu **Run > Stop Debugging**. Also close all windows inside VS Code like .http file 1️⃣ as well as the Response view 2️⃣.
 
 !IMAGE[close all windows](instructions315038/iyp3uzg9.jpg)
 
 
 ### Examine the database (optional)
-You can examine and modify the application's data. The data is stored in Azure Table Storage, which in this case is running locally using the Azurite emulator which is already installed for you in this environment.
+- [ ] You can examine and modify the application's data. The data is stored in Azure Table Storage, which in this case is running locally using the Azurite emulator which is already installed for you in this environment.
 
 > [!note] When you ran npm install in the previous exercise you installed the Azurite storage emulator. When you start the project, Azurite is automatically started up. So as long as your project is started successfully you can view the storage.
 
@@ -231,15 +231,15 @@ In this exercise, you will build an API plugin using the API you created in the 
 In this step you will upload sample documents which will be used by your declarative agent to respond to user prompts. These include some consulting documents such as Statements of Work, and a simple spreadsheet containing your hours as a consultant.
 
 ### Create a SharePoint site
-Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and find the **"SharePoint"** app under **"Apps"** from the browser inside your Skillable environment.
+- [ ] Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and find the **"SharePoint"** app under **"Apps"** from the browser inside your Skillable environment.
 
 !IMAGE[upload-docs-01.png](instructions303310/upload-docs-01.png)
-1. Click **"Create site"** 1️⃣ and choose **"Team site"** 2️⃣
+1. - [ ] Click **"Create site"** 1️⃣ and choose **"Team site"** 2️⃣
 
 !IMAGE[upload-docs-02.png](instructions303310/upload-docs-02.png)
 
-2. Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
-3. Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
+2. - [ ] Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
+3. - [ ] Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
 
 How to create this:
 
@@ -255,24 +255,24 @@ How to create this:
 
 ✅ "Trey Research Legal - AL99" (Anna Lopez, favorite number 99)
 
-Once done select **"Next"** 2️⃣
+- [ ] Once done select **"Next"** 2️⃣
 
 !IMAGE[upload-docs-05.png](instructions303310/upload-docs-05.png)
-Then select your privacy settings and language, and click "Create site"
-After a few moments you will be asked to complete by selecting **"Finish"**. Then you will be presented with a new SharePoint site.
+- [ ] Then select your privacy settings and language, and click "Create site"
+- [ ] After a few moments you will be asked to complete by selecting **"Finish"**. Then you will be presented with a new SharePoint site.
 
 ### Upload the Sample Documents
-1. In the Documents web part, select **"See all"** to view the document library page
+1. - [ ] In the Documents web part, select **"See all"** to view the document library page
 
 !IMAGE[upload-docs-07.png](instructions303310/upload-docs-07.png)
 
-2. Click the **"Upload"** 1️⃣ toolbar button and select **"Files"** 2️⃣
+2. - [ ] Click the **"Upload"** 1️⃣ toolbar button and select **"Files"** 2️⃣
 
 !IMAGE[upload-docs-08.png](instructions303310/upload-docs-08.png)
 
-3. Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
+3. - [ ] Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
 
-4. Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
+4. - [ ] Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
 
 !IMAGE[upload-docs-09.png](instructions303310/upload-docs-09.png)
 
@@ -280,9 +280,9 @@ After a few moments you will be asked to complete by selecting **"Finish"**. The
 
 ### Add the Declarative Agent JSON to Your Project
 
-1. Close the browser and return to the working folder in VS Code
-2. Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
-3. Copy the following JSON into this file and save it:
+1. - [ ] Close the browser and return to the working folder in VS Code
+2. - [ ] Create a new file called `trey-declarative-agent.json` within your **appPackage** folder
+3. - [ ] Copy the following JSON into this file and save it:
 ```
 {
     "$schema": "https://developer.microsoft.com/json-schemas/copilot/declarative-agent/v1.6/schema.json",
@@ -438,8 +438,8 @@ Scrolling down you can find the runtime settings:
 ```
 They include a pointer to the trey-definition.json file, and an enumeration of the available functions.
 ### Add the Declarative Agent to Your App Manifest
-1. Open the **manifest.json** file within the **appPackage** directory
-2. Add a new `"copilotAgents"` object with a `"declarativeAgents"` object inside, just before the `"staticTabs"` object, as follows. This references the declarative agent JSON file you created in the previous step:
+1. - [ ] Open the **manifest.json** file within the **appPackage** directory
+2. - [ ] Add a new `"copilotAgents"` object with a `"declarativeAgents"` object inside, just before the `"staticTabs"` object, as follows. This references the declarative agent JSON file you created in the previous step:
 ```
   "copilotAgents": {
     "declarativeAgents": [
@@ -473,8 +473,8 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
 ```
 ## Step 3: Run and Test the Declarative Agent
 ### Run the New Project
-1. If you're still in the debugger, stop it to force a complete re-deployment
-2. Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
+1. - [ ] If you're still in the debugger, stop it to force a complete re-deployment
+2. - [ ] Start the debugger by pressing **F5** or selecting **Run > Start Debugging** from the VS Code menu 
 
 ### Test the Declarative Agent
 
@@ -484,12 +484,12 @@ If not you have probably hit an issue as below:
 
 !IMAGE[launch-error.png](instructions315038/launch-error.png)
 
-You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in the browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
+- [ ] You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in the browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
 
 !IMAGE[flyout.png](instructions315038/flyout.png)
 
-Try a prompt such as: `Please list my projects along with details from the Statement of Work doc` 
-When you query your agent and it attempts to access an API like in this case getting list of projects, you'll receive a prompt requesting permission to perform this action. To proceed, select either "Allow once" or "Always allow" as shown below.
+- [ ] Try a prompt such as: `Please list my projects along with details from the Statement of Work doc` 
+- [ ] When you query your agent and it attempts to access an API like in this case getting list of projects, you'll receive a prompt requesting permission to perform this action. To proceed, select either "Allow once" or "Always allow" as shown below.
 
 
 !IMAGE[allow.png](instructions315038/allow.png)
@@ -499,7 +499,7 @@ Scroll to the end of the response to find source or citations. Notice that Copil
 
 !IMAGE[response-sow.png](instructions315038/response-sow.png)
 
-Let's also see how the API is getting called. Try to send another prompt: `List my information`. 
+- [ ] Let's also see how the API is getting called. Try to send another prompt: `List my information`. 
 
 
 
@@ -514,7 +514,7 @@ Avery Howard is the logged in user as we have not yet implemented Auth.
 
 
 
-If you go back to your VS Code project under "Terminal", you will also see how the agent called the API as shown below:
+- [ ] If you go back to your VS Code project under "Terminal", you will also see how the agent called the API as shown below:
 
 !IMAGE[api-call-code.png](instructions315038/api-call-code.png)
 
@@ -547,7 +547,7 @@ You've completed adding a declarative agent to your API plugin. Proceed to wrap 
 ---
 
 ## Congratulations! You've completed the lab
-End this lab by selecting **End** at the upper right of the instructions pane. 
+- [ ] End this lab by selecting **End** at the upper right of the instructions pane. 
 
 !IMAGE[e8avjirx.jpg](instructions315038/e8avjirx.jpg)
 
