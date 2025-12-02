@@ -162,6 +162,63 @@ TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
 
 - [ ] Once signed in, close the browser and return to the project window
 
+### Set up a persistent developer tunnel (optional but recommended)
+
+By default, Agents Toolkit creates a new developer tunnel—and therefore a new URL for accessing your locally running API—each time you start the project. Normally this works fine because the toolkit automatically updates the URL. However, due to recent caching issues in the platform, the updated URL may not propagate when agents call the API. To avoid this problem, it's safer to use a persistent URL.
+
+
+- [ ] Open command prompt in windows by selecting the windows button and typing "CMD"
+
+- [ ] **Login to devtunnel**- Login using your Microsoft 365 credentials
+
+```
+devtunnel user login
+```
+Be sure to leave the devtunnel command running as you do the exercises in this lab. If you need to restart it, just repeat the last command `devtunnel user login`.
+
+- [ ] **Create and host the tunnel** - You'll need to set up a persistent tunnel to the Azure Functions local port (7071). You can use these commands one by one and substitute your own name instead of "mytunnel" if you wish.
+
+```
+devtunnel create mytunnel -a --host-header unchanged
+
+```
+
+```
+devtunnel port create mytunnel -p 7071
+
+```
+
+```
+devtunnel host mytunnel
+```
+
+The command line will display the connection information, such as:
+
+!IMAGE[devtunnel.png](instructions315038/devtunnel.png)
+
+- [ ] Copy the "Connect via browser" URL and save it in notepad. 
+> DO NOT CLOSE THIS TERMINAL WINDOW UNTIL END OF THIS LAB
+
+- [ ] **Disable the dynamically created tunnel in your project** - Edit .vscode\tasks.json and locate the "Start Agent Locally". Comment out the "Start local tunnel" depdendency and add its dependency, "Start Azurite emulator" instead. The resulting task should look like this:
+
+```json
+ {
+            "label": "Start Agent Locally",
+            "dependsOn": [
+                "Validate prerequisites",
+               //"Start local tunnel",
+               "Start Azurite emulator",
+                "Create resources",
+                "Build project",
+                "Start application"
+            ],
+            "dependsOrder": "sequence"
+        },
+```
+
+- [ ] **Manually override the server URL**- Open **env/.env.local.user** and change the value of `OPENAPI_SERVER_URL` to the persistent tunnel URL you copied into the notepad.
+
+
 ### Run the application
 
 Previously, you ensured you are logged into Microsoft 365 for the toolkit. If everything looks good, you will have both **Custom App Upload Enabled** and **Copilot Access Enabled** indicators showing green checkmarks.
@@ -229,54 +286,12 @@ Within the Azure Storage Explorer, open the "Emulator & Attached" selection and 
 
 In this exercise, you will build an API plugin using the API you created in the previous exercise. Next, you'll integrate a declarative agent that is grounded in both the API plugin and specific SharePoint files.
 
-## Step 1: Upload Sample Documents
-In this step, you will upload sample documents which will be used by your declarative agent to respond to user prompts. These include some consulting documents such as Statements of Work, and a simple spreadsheet containing your hours as a consultant.
+## Step 1: Analyse the SharePoint files 
+In this step, have a look at the SharePoint site already created for you with the files needed for you agent. You can also create a new site and upload file, but since we have a short time for lab, and keeping in mind new files indexing we will use a pre-created SharePoint site.
 
-### Create a SharePoint site
-- [ ] Go to the browser and open the link `https://m365.cloud.microsoft.com/apps/` and find the **"SharePoint"** app under **"Apps"** from the browser inside your Skillable environment.
+- [ ] Go to site url, `https://lodsprodmca.sharepoint.com/sites/TreyResearch45` using a new browser session in your vm.
+- [ ] Go to **Documents** and analyse the files uploaded.
 
-!IMAGE[upload-docs-01.png](instructions303310/upload-docs-01.png)
-- [ ] Click **"Create site"** 1️⃣ and choose **"Team site"** 2️⃣
-
-!IMAGE[upload-docs-02.png](instructions303310/upload-docs-02.png)
-
-- [ ] Select the **"Standard team"** site template; you will be shown a preview of the site. Click **"Use Template"** to continue
-- [ ] Give your site a name  1️⃣, but keep it unique like **Trey Research Legal - (Your Initials)(Favorite 2 digit Number)**
-
-How to create this:
-
-- Use your first and last name initials (example: Sarah Johnson = SJ)
-- Add your favorite 2 digit number right after (no spaces)
-- Complete format: "Trey Research Legal - (Initials)(Number)"
-
-**Examples:**
-
-✅ "Trey Research Legal - SJ7" (Sarah Johnson, favorite number 7)
-
-✅ "Trey Research Legal - MK42" (Mike Kim, favorite number 42)  
-
-✅ "Trey Research Legal - AL99" (Anna Lopez, favorite number 99)
-
-- [ ] Once done select **"Next"** 2️⃣
-
-!IMAGE[upload-docs-05.png](instructions303310/upload-docs-05.png)
-- [ ] Then select your privacy settings and language, and click "Create site"
-- [ ] After a few moments you will be asked to complete by selecting **"Finish"**. Then you will be presented with a new SharePoint site.
-
-### Upload the Sample Documents
-- [ ] In the Documents web part, select **"See all"** to view the document library page
-
-!IMAGE[upload-docs-07.png](instructions303310/upload-docs-07.png)
-
-- [ ] Click the **"Upload"** 1️⃣ toolbar button and select **"Files"** 2️⃣
-
-!IMAGE[upload-docs-08.png](instructions303310/upload-docs-08.png)
-
-- [ ] Navigate to your working folder; you will find a directory called **sampleDocs** within it. Highlight all the sample documents 1️⃣ and click **"Open"** 2️⃣
-
-- [ ] Make note of the site url, which will resemble "https://{{tenant}}/sites/TreyResearchLegal-RW33", as you will need it in the next step.
-
-!IMAGE[upload-docs-09.png](instructions303310/upload-docs-09.png)
 
 ## Step 2: Create the Declarative Agent
 
@@ -327,7 +342,8 @@ How to create this:
 ```
 Notice that the file includes a name, description, and instructions for the declarative agent. Notice that as part of the instructions, Copilot is instructed to "Always remind users of the Trey motto, 'Always be Billing!'." You should see this when you prompt Copilot in the next step.
 ### Add the URL of Your SharePoint Site to the Declarative Agent
-Under "Capabilities" you will notice a SharePoint file container. While Microsoft 365 Copilot may reference any documents in SharePoint or OneDrive, this declarative agent will only access files in the Trey Research Legal Documents site you created in an earlier step.
+Under "Capabilities" you will notice a SharePoint file container. While Microsoft 365 Copilot may reference any documents in SharePoint or OneDrive, this declarative agent will only access files in the Trey Research Legal Documents site we have provided in the earlier step. 
+
 ```
 "capabilities": [
     {
@@ -342,7 +358,7 @@ Under "Capabilities" you will notice a SharePoint file container. While Microsof
 ```
 Notice that the SharePoint URL is actually an environment variable `SHAREPOINT_DOCS_URL`, so you need to add that to your **.env.local** file in the **env** folder. Add this on its own line at the end of the file, using your copied SharePoint URL:
 ```
-SHAREPOINT_DOCS_URL=https://<mytenant>.sharepoint.com/sites/<TreyResearchLegaldocuments_NAME>
+SHAREPOINT_DOCS_URL=https://lodsprodmca.sharepoint.com/sites/TreyResearch45
 ```
 ### Examine the API Plugin Files
 Within the trey-declarative-agent.json file, you'll find an "actions" section, which tells the declarative agent to access the Trey Research API.
@@ -474,6 +490,21 @@ If you've ever tried [Teams App Camp](https://aka.ms/app-camp), you would know a
   "microsoft.github.io"
 ],
 ```
+
+Before you test the application, update the manifest version also, follow these steps:
+
+In the same manifest file, locate the `version` field. It should look something like this:
+
+```
+"version": "1.0.1"
+```
+Increment the version number to a small increment. For example, change it to:
+
+```
+"version": "1.0.2"
+```
+Save the file after making the change.
+
 ## Step 3: Run and Test the Declarative Agent
 ### Run the New Project
 - [ ] If you're still in the debugger, stop it to force a complete re-deployment
