@@ -162,9 +162,9 @@ TAP Token:+++@lab.CloudPortalCredential(User1).AccessToken+++
 
 - [ ] Once signed in, close the browser and return to the project window
 
-### Set up a persistent developer tunnel (optional but recommended)
+### Set up a persistent developer tunnel 
 
-By default, Agents Toolkit creates a new developer tunnel—and therefore a new URL for accessing your locally running API—each time you start the project. Normally this works fine because the toolkit automatically updates the URL. However, due to recent caching issues in the platform, the updated URL may not propagate when agents call the API. To avoid this problem, it's safer to use a persistent URL.
+By default, Agents Toolkit creates a new developer tunnel-and therefore a new URL for accessing your locally running API-each time you start the project. Normally this works fine because the toolkit automatically updates the URL. However, due to recent caching issues in the platform, the updated URL may not propagate when agents call the API. To avoid this problem, it's safer to use a persistent URL.
 
 
 - [ ] Open command prompt in windows by selecting the windows button and typing "CMD"
@@ -521,6 +521,14 @@ If not, you have probably hit an issue as below:
 - [ ] You can just select **Cancel** to ignore it. Then open the Copilot chat by opening `https://m365.cloud.microsoft/chat/?auth=2` in the browser session. Then use the left flyout 1️⃣ to show your previous chats and declarative agents, then select the **Trey Genie Local** agent 2️⃣.
 
 !IMAGE[flyout.png](instructions315038/flyout.png)
+
+#### Diagnosing and Debugging Agent
+
+You can enable developer mode in a chat to allow you as a developer to understand how well the agent understands the tasks, ensure it calls your services appropriately, identify areas that need fine-tuning, detect performance issues, and generally help you track and analyse its interactions.
+
+Send `-developer on` to the chat to enable debugging mode.
+The agent will respond with a success message if everything went well **Successfully enabled developer mode**.
+
 
 - [ ] Try a prompt such as: `Please list my projects along with details from the Statement of Work doc` 
 - [ ] When you query your agent and it attempts to access an API like in this case getting list of projects, you'll receive a prompt requesting permission to perform this action. To proceed, select either "Allow once" or "Always allow" as shown below.
